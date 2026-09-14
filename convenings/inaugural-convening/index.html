@@ -397,6 +397,51 @@
       box-shadow: 0 10px 30px rgba(18, 50, 75, .055)
     }
 
+    .council-banner {
+      margin-top: 1.35rem;
+      padding: 2.1rem;
+      background: var(--dpi-blue);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+      flex-wrap: wrap
+    }
+
+    .council-banner h3 {
+      margin: 0 0 .5rem;
+      color: white;
+      font-size: 1.35rem
+    }
+
+    .council-banner p {
+      margin: 0;
+      color: #d9e7f2;
+      max-width: 640px;
+      font-size: .96rem
+    }
+
+    .council-banner .btn {
+      flex-shrink: 0;
+      display: inline-block;
+      text-decoration: none;
+      background: white;
+      color: var(--dpi-blue);
+      font-weight: 800;
+      font-size: .88rem;
+      padding: .7rem 1.15rem;
+      border-radius: 999px;
+      white-space: nowrap
+    }
+
+    @media (max-width:600px) {
+      .council-banner {
+        flex-direction: column;
+        align-items: flex-start
+      }
+    }
+
     .welcome-card {
       padding: 2rem
     }
@@ -1473,6 +1518,15 @@
             framework, and dissemination approach.</span></div>
         <div class="timeline-step"><strong>Spring 2027</strong><span>Begin the first full cycle of identifying and
             reviewing promising practices.</span></div>
+      </div>
+      <div class="card council-banner">
+        <div>
+          <h3>Read the ILC Charter</h3>
+          <p>The Council's founding charter covers its purpose, membership criteria, and governance structure in
+            full.</p>
+        </div>
+        <a class="btn" href="../../documents/Innovation%20Leadership%20Council%20Charter.pdf" target="_blank"
+          rel="noopener">Read the Charter</a>
       </div>
     </section>
     <section class="section" id="leadership">
