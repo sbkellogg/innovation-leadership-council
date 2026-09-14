@@ -92,7 +92,8 @@
       color: var(--dpi-blue);
       display: flex;
       align-items: center;
-      gap: .8rem;
+      gap: .7rem;
+      min-width: 0;
       font-weight: 800
     }
 
@@ -105,7 +106,9 @@
     }
 
     .brand-copy {
-      line-height: 1.15
+      line-height: 1.15;
+      border-left: 1px solid var(--line);
+      padding-left: .72rem
     }
 
     .brand-copy strong {
@@ -116,9 +119,10 @@
     .brand-copy span {
       display: block;
       font-size: .72rem;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--muted);
-      margin-top: .14rem
+      margin-top: .14rem;
+      white-space: nowrap
     }
 
     .nav {
@@ -637,6 +641,10 @@
       .brand-logo {
         height: 46px;
         max-width: 155px
+      }
+
+      .brand-copy span {
+        display: none
       }
 
       .hero-inner,
