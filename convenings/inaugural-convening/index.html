@@ -177,17 +177,22 @@
       background: var(--dpi-blue)
     }
 
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      z-index: 0
+    }
+
     .hero:before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: 1;
-      background-color: var(--dpi-blue);
-      background-image:
-        repeating-linear-gradient(45deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px 42px),
-        repeating-linear-gradient(-45deg, rgba(255, 255, 255, .04) 0 2px, transparent 2px 42px),
-        radial-gradient(circle at 20px 20px, rgba(255, 255, 255, .09) 3px, transparent 3px);
-      background-size: 42px 42px, 42px 42px, 42px 42px
+      background: linear-gradient(90deg, rgba(0, 58, 112, .97) 0%, rgba(0, 58, 112, .93) 37%, rgba(0, 58, 112, .72) 67%, rgba(0, 58, 112, .45) 100%), linear-gradient(0deg, rgba(0, 58, 112, .35), rgba(0, 58, 112, .05) 45%, rgba(0, 58, 112, .16))
     }
 
     .hero:after {
@@ -1201,6 +1206,10 @@
         min-height: 0
       }
 
+      .hero-photo {
+        display: none
+      }
+
       .hero:before {
         background: var(--dpi-blue)
       }
@@ -1364,6 +1373,8 @@
     </div>
   </header>
   <section class="hero" id="top">
+    <img alt="Educators collaborating around a table in a classroom" class="hero-photo"
+      src="../../assets/AdobeStock_1759762853.jpeg">
     <div class="hero-inner">
       <div>
         <div class="eyebrow">Innovation Leadership Council</div>
