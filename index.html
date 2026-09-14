@@ -1,49 +1,908 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="Home for the North Carolina Innovation Leadership Council: mission, annual cycle, leadership, roadmap, convenings, and public documents."
+    name="description" />
   <title>Innovation Leadership Council | NCDPI</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      max-width: 780px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.5;
-      color: #1a1a1a;
+    :root {
+      --dpi-blue: #003A70;
+      --dpi-purple: #922880;
+      --dpi-aqua: #29B5D9;
+      --dpi-orange: #FF9015;
+      --dpi-green: #74C04B;
+      --dpi-gray: #B7B9BB;
+      --blue-10: #E6EDF6;
+      --aqua-10: #EAF8FB;
+      --ink: #172431;
+      --muted: #55636f;
+      --paper: #fff;
+      --surface: #f5f7f9;
+      --line: #dde3e8;
+      --radius: 20px;
+      --max: 1180px;
     }
-    h1 { margin-bottom: 0.25rem; }
-    .subtitle { color: #555; margin-top: 0; }
-    section { margin-top: 2.5rem; }
-    ul { padding-left: 1.25rem; }
-    li { margin-bottom: 0.5rem; }
-    a { color: #0b5fa5; }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.58
+    }
+
+    a {
+      color: var(--dpi-blue)
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: white;
+      color: var(--dpi-blue);
+      padding: .7rem 1rem;
+      z-index: 999
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: auto;
+      min-height: 74px;
+      padding: .8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--dpi-blue);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-weight: 800
+    }
+
+    .brand-logo {
+      display: block;
+      height: 54px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain
+    }
+
+    .brand-copy {
+      line-height: 1.15
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: .91rem
+    }
+
+    .brand-copy span {
+      display: block;
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: .14rem
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.05rem;
+      flex-wrap: wrap
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 800;
+      color: #465662
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      color: var(--dpi-blue)
+    }
+
+    .nav .nav-cta {
+      border: 1px solid var(--dpi-blue);
+      color: var(--dpi-blue);
+      border-radius: 999px;
+      padding: .55rem .85rem
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background: linear-gradient(120deg, var(--dpi-blue) 0%, #00518f 100%)
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--dpi-aqua) 0 40%, var(--dpi-green) 40% 65%, var(--dpi-orange) 65% 82%, var(--dpi-purple) 82%)
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: auto;
+      padding: 3.6rem 1.25rem 3.4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 28px;
+      height: 4px;
+      border-radius: 99px;
+      background: var(--dpi-orange)
+    }
+
+    h1 {
+      margin: .7rem 0 .65rem;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      max-width: 560px
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.4;
+      margin: 0;
+      max-width: 620px;
+      color: #f7fbff
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.5rem
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .55rem .78rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .13);
+      border: 1px solid rgba(255, 255, 255, .28);
+      font-size: .88rem;
+      font-weight: 800
+    }
+
+    .hero-card {
+      background: white;
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 1.7rem;
+      box-shadow: 0 18px 45px rgba(0, 58, 112, .18)
+    }
+
+    .hero-card small {
+      font-weight: 900;
+      color: var(--dpi-blue);
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .hero-card h2 {
+      margin: .4rem 0 .6rem;
+      font-size: 1.3rem
+    }
+
+    .hero-card p {
+      margin: 0 0 .9rem;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .hero-card .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--dpi-blue);
+      color: white;
+      font-weight: 800;
+      font-size: .88rem;
+      padding: .6rem .95rem;
+      border-radius: 999px
+    }
+
+    .quick-nav {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 74px;
+      z-index: 20
+    }
+
+    .quick-nav-inner {
+      max-width: var(--max);
+      margin: auto;
+      padding: .9rem 1.25rem;
+      display: flex;
+      gap: 1.05rem;
+      overflow-x: auto;
+      scrollbar-width: thin
+    }
+
+    .quick-nav a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 800
+    }
+
+    .quick-nav a:hover,
+    .quick-nav a:focus {
+      color: var(--dpi-blue)
+    }
+
+    main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 4rem 1.25rem 5rem
+    }
+
+    .section {
+      margin-top: 5.2rem;
+      scroll-margin-top: 142px
+    }
+
+    .section:first-child {
+      margin-top: 0
+    }
+
+    .kicker {
+      margin: 0 0 .4rem;
+      color: var(--dpi-blue);
+      font-weight: 900;
+      font-size: .78rem;
+      letter-spacing: .11em;
+      text-transform: uppercase
+    }
+
+    .section h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: -.03em
+    }
+
+    .section-intro {
+      max-width: 820px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(18, 50, 75, .055)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 1.35rem;
+      margin-top: 2rem
+    }
+
+    .about-card {
+      padding: 2rem
+    }
+
+    .about-card p {
+      font-size: 1.03rem
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0
+    }
+
+    .shared-product {
+      padding: 1.6rem;
+      background: var(--blue-10);
+      border-left: 6px solid var(--dpi-aqua);
+      border-radius: 0 var(--radius) var(--radius) 0
+    }
+
+    .shared-product small {
+      font-weight: 900;
+      color: var(--dpi-blue);
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .shared-product h3 {
+      margin: .4rem 0 .6rem;
+      color: var(--dpi-blue);
+      font-size: 1.3rem
+    }
+
+    .shared-product p {
+      margin: 0 0 .8rem;
+      color: var(--muted)
+    }
+
+    .shared-product p:last-child {
+      margin-bottom: 0
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    .icon-card {
+      padding: 1.45rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .icon-card:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--dpi-aqua)
+    }
+
+    .icon-card:nth-child(5n+2):before {
+      background: var(--dpi-green)
+    }
+
+    .icon-card:nth-child(5n+3):before {
+      background: var(--dpi-orange)
+    }
+
+    .icon-card:nth-child(5n+4):before {
+      background: var(--dpi-purple)
+    }
+
+    .icon-card:nth-child(5n+5):before {
+      background: var(--dpi-gray)
+    }
+
+    .icon-card strong.step {
+      display: block;
+      color: var(--dpi-blue);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .icon-card h3 {
+      margin: .3rem 0 .5rem;
+      color: var(--dpi-blue);
+      font-size: 1.12rem
+    }
+
+    .icon-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .85rem;
+      margin-top: 2rem
+    }
+
+    .timeline-step {
+      padding: 1.15rem;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      position: relative
+    }
+
+    .timeline-step strong {
+      display: block;
+      color: var(--dpi-blue);
+      font-size: .94rem
+    }
+
+    .timeline-step span {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.4;
+      margin-top: .25rem
+    }
+
+    .timeline-step:after {
+      content: "";
+      position: absolute;
+      right: -.65rem;
+      top: 50%;
+      width: .45rem;
+      height: .45rem;
+      border-top: 2px solid var(--dpi-aqua);
+      border-right: 2px solid var(--dpi-aqua);
+      transform: translateY(-50%) rotate(45deg)
+    }
+
+    .timeline-step:last-child:after {
+      display: none
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.35rem;
+      margin-top: 2rem
+    }
+
+    .split-grid .card {
+      padding: 1.9rem
+    }
+
+    .split-grid h3 {
+      margin: 0 0 .9rem;
+      color: var(--dpi-blue);
+      font-size: 1.1rem
+    }
+
+    .split-grid ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted)
+    }
+
+    .split-grid li {
+      margin-bottom: .8rem
+    }
+
+    .split-grid li:last-child {
+      margin-bottom: 0
+    }
+
+    .split-grid li strong {
+      color: var(--ink)
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+      margin-top: 2rem
+    }
+
+    .roadmap-card {
+      padding: 1.6rem
+    }
+
+    .roadmap-card small {
+      font-weight: 900;
+      color: var(--dpi-blue);
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .roadmap-card h3 {
+      margin: .35rem 0 .6rem;
+      font-size: 1.15rem
+    }
+
+    .roadmap-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.1rem;
+      margin-top: 2rem
+    }
+
+    .link-card {
+      padding: 1.5rem;
+      display: block;
+      text-decoration: none;
+      color: inherit
+    }
+
+    .link-card small {
+      font-weight: 900;
+      color: var(--dpi-blue);
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .link-card h3 {
+      margin: .35rem 0 .4rem;
+      color: var(--ink);
+      font-size: 1.1rem
+    }
+
+    .link-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    footer {
+      background: var(--dpi-blue);
+      color: white;
+      margin-top: 5.2rem
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: auto;
+      padding: 2.6rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 2rem
+    }
+
+    .footer-inner h2 {
+      margin: 0 0 .55rem;
+      font-size: 1.45rem
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: #d9e7f2;
+      max-width: 720px
+    }
+
+    .footer-meta {
+      text-align: right;
+      color: #d9e7f2;
+      font-size: .84rem;
+      line-height: 1.5
+    }
+
+    .footer-meta a {
+      color: white
+    }
+
+    @media (max-width:980px) {
+      .nav {
+        display: none
+      }
+
+      .brand-logo {
+        height: 46px;
+        max-width: 155px
+      }
+
+      .hero-inner,
+      .about-grid,
+      .split-grid {
+        grid-template-columns: 1fr
+      }
+
+      .timeline {
+        grid-template-columns: 1fr
+      }
+
+      .timeline-step:after {
+        display: none
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr
+      }
+
+      .footer-meta {
+        text-align: left
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Innovation Leadership Council</h1>
-  <p class="subtitle">North Carolina Department of Public Instruction</p>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="header">
+    <div class="header-inner">
+      <a aria-label="Innovation Leadership Council home" class="brand" href="#top">
+        <img alt="Innovation Leadership Council" class="brand-logo" src="assets/logo-ilc-color.png" />
+        <span class="brand-copy"><strong>Office of Research &amp; Promising Practices</strong><span>NC Department of
+            Public Instruction</span></span>
+      </a>
+      <nav aria-label="Primary navigation" class="nav">
+        <a href="#about">About</a>
+        <a href="#cycle">Annual Cycle</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="nav-cta" href="#resources">Convenings &amp; Documents</a>
+      </nav>
+    </div>
+  </header>
 
-  <section>
-    <h2>Convenings</h2>
-    <ul>
-      <li><a href="convenings/inaugural-convening/">Inaugural Convening</a></li>
-    </ul>
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">NC DPI · Office of Research &amp; Promising Practices</div>
+        <h1>Innovation Leadership Council</h1>
+        <p class="hero-sub">Creating a clearer pathway from local innovation to statewide learning by surfacing,
+          vetting, and scaling promising practices across North Carolina public schools.</p>
+        <div class="hero-meta"><span class="pill">Cross-Sector Council</span><span class="pill">5-Phase Annual
+            Cycle</span><span class="pill">Achieving Educational Excellence · Pillar 6</span></div>
+      </div>
+      <aside aria-label="Inaugural convening" class="hero-card">
+        <small>Inaugural Convening</small>
+        <h2>2026-27 Kickoff Retreat</h2>
+        <p>See the agenda, leadership, council roster, and participant details for the Council's first working
+          session in Wilmington, NC.</p>
+        <a class="btn" href="convenings/inaugural-convening/">View convening page</a>
+      </aside>
+    </div>
   </section>
 
-  <section>
-    <h2>Reports</h2>
-    <ul>
-      <li><em>Coming soon.</em></li>
-    </ul>
-  </section>
+  <nav aria-label="Page sections" class="quick-nav">
+    <div class="quick-nav-inner">
+      <a href="#about">About</a>
+      <a href="#goals">Goals</a>
+      <a href="#cycle">Annual Cycle</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#roadmap">3-Year Roadmap</a>
+      <a href="#resources">Convenings &amp; Documents</a>
+    </div>
+  </nav>
 
-  <section>
-    <h2>Documents</h2>
-    <ul>
-      <li><a href="documents/Innovation Leadership Council Charter.pdf">Innovation Leadership Council Charter (PDF)</a></li>
-    </ul>
-  </section>
+  <main id="main">
+    <section class="section" id="about">
+      <p class="kicker">About the Council</p>
+      <h2>From local innovation to statewide learning</h2>
+      <div class="about-grid">
+        <article class="card about-card">
+          <p>The Innovation Leadership Council (ILC) is designed to create a clearer pathway from local innovation to
+            statewide learning. Rather than leaving strong practices isolated in individual schools or districts, the
+            ILC surfaces innovative practices, vets them against shared criteria, and helps educators learn across
+            public school models and regions.</p>
+          <p>Ultimately, the goal of the ILC is to create stronger connections across North Carolina's public
+            education community while elevating practices that can benefit students in varied contexts.</p>
+        </article>
+        <aside class="shared-product">
+          <small>Strategic Alignment</small>
+          <h3>Achieving Educational Excellence</h3>
+          <p>The ILC directly responds to North Carolina's Achieving Educational Excellence Strategic Plan. Under
+            Pillar 6, the plan calls for a cross-sector Innovation Leadership Council, a structured innovation
+            process, and an annual collection of effective practices connecting traditional public, charter, and lab
+            schools.</p>
+          <p><a
+              href="https://www.dpi.nc.gov/about-dpi/state-superintendent-public-instruction/achieving-educational-excellence"
+              target="_blank" rel="noopener">Read the NC Strategic Plan &rarr;</a></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="goals">
+      <p class="kicker">Council Goal &amp; Objectives</p>
+      <h2>Identify, elevate, and help scale what works</h2>
+      <p class="section-intro">The ILC brings together leaders from districts, charter schools, lab schools, higher
+        education, and NCDPI to help surface what is working, strengthen cross-sector learning, and accelerate
+        progress across the state's strategic priorities.</p>
+      <div class="icon-grid">
+        <article class="icon-card">
+          <strong class="step">01</strong>
+          <h3>Improve identification &amp; vetting</h3>
+          <p>Use a transparent framework, common submission process, and shared review criteria grounded in evidence,
+            equity, and scalability.</p>
+        </article>
+        <article class="icon-card">
+          <strong class="step">02</strong>
+          <h3>Strengthen cross-sector learning</h3>
+          <p>Bring together district, charter, and lab school leaders to share practices and support transfer across
+            contexts.</p>
+        </article>
+        <article class="icon-card">
+          <strong class="step">03</strong>
+          <h3>Spread effective practices</h3>
+          <p>Share stories of impact through an annual compendium, communications assets, and Celebrate the Good.</p>
+        </article>
+        <article class="icon-card">
+          <strong class="step">04</strong>
+          <h3>Support replication &amp; scale</h3>
+          <p>Use statewide and regional education networks, convenings, and implementation-ready resources.</p>
+        </article>
+        <article class="icon-card">
+          <strong class="step">05</strong>
+          <h3>Inform policy &amp; implementation</h3>
+          <p>Provide recommendations and cross-cutting insights to NCDPI leadership and the State Board of
+            Education.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="cycle">
+      <p class="kicker">Annual Innovation Cycle</p>
+      <h2>Five connected phases</h2>
+      <p class="section-intro">The ILC follows an annual cycle to identify, review, elevate, and share evidence-based
+        innovative practices &mdash; from setting priorities and launching the statewide call, to reviewing
+        submissions, developing recommendations, and sharing selected practices through statewide learning and the
+        annual innovation compendium.</p>
+      <div class="timeline">
+        <div class="timeline-step"><strong>1. Kick-off Retreat &amp; Planning</strong><span>Set annual themes,
+            priority focus areas, and refine the submission process and rubric.</span></div>
+        <div class="timeline-step"><strong>2. Statewide Call (Winter)</strong><span>Support outreach and encourage
+            submissions from districts, charter, and lab schools.</span></div>
+        <div class="timeline-step"><strong>3. Review &amp; Recommendations (Spring)</strong><span>Score submissions
+            and recommend practices for statewide visibility.</span></div>
+        <div class="timeline-step"><strong>4. Sharing &amp; Statewide Learning (Summer)</strong><span>Shape case
+            summaries and stories that elevate selected practices.</span></div>
+        <div class="timeline-step"><strong>5. Convening Support &amp; Compendium (Fall)</strong><span>Highlight
+            practices through convenings and the Annual Innovation Compendium.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="leadership">
+      <p class="kicker">Leadership Roles</p>
+      <h2>Who serves on the Council</h2>
+      <p class="section-intro">Members represent a range of educational roles and school models, bringing relevant
+        expertise that strengthens the Council's ability to identify, assess, and elevate innovative practices.</p>
+      <div class="split-grid">
+        <article class="card">
+          <h3>Educator Roles</h3>
+          <ul>
+            <li><strong>School-based leaders</strong> — principals, assistant principals, instructional coaches, and
+              teacher leaders with expertise in implementation and student support.</li>
+            <li><strong>District leaders</strong> — superintendents, accountability leaders, and central office
+              administrators with expertise in systems change and policy alignment.</li>
+            <li><strong>Charter, lab, and innovative school leaders</strong> — school directors with expertise in
+              school design and cross-sector learning.</li>
+            <li><strong>Higher education &amp; research partners</strong> — faculty, researchers, and evaluators with
+              expertise in evidence use and implementation support.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Member Responsibilities</h3>
+          <ul>
+            <li>Help shape annual focus areas aligned with the NC Strategic Plan.</li>
+            <li>Surface innovative practices from a range of school and district contexts.</li>
+            <li>Review submissions using a shared rubric and common criteria.</li>
+            <li>Advise on evidence, equity, and scalability.</li>
+            <li>Contribute to statewide learning through the compendium, convenings, and communications.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <p class="kicker">3-Year Project Timeline</p>
+      <h2>Planning through statewide scale</h2>
+      <p class="section-intro">The ILC is being implemented through a phased, multi-year cycle that begins with
+        council formation and design work, moves into a statewide call and review process, and then advances
+        selected practices through storytelling, convenings, and the annual innovation compendium.</p>
+      <div class="roadmap-grid">
+        <article class="card roadmap-card">
+          <small>2026</small>
+          <h3>Planning: Design &amp; Launch the ILC</h3>
+          <p>Finalize the charter and governance, recruit and onboard members, host the kickoff retreat, and prepare
+            the first statewide call.</p>
+        </article>
+        <article class="card roadmap-card">
+          <small>2027</small>
+          <h3>Innovation Cycle 1: First Full Cycle</h3>
+          <p>Launch the statewide call, review and select the first cohort of practices, and publish the 2027 Annual
+            Compendium.</p>
+        </article>
+        <article class="card roadmap-card">
+          <small>2028</small>
+          <h3>Innovation Cycle 2: Refine, Scale &amp; Sustain</h3>
+          <p>Run a second statewide call with emphasis on replication, and develop recommendations for sustaining the
+            ILC and compendium cycle.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <p class="kicker">Convenings &amp; Documents</p>
+      <h2>Explore the Council's work</h2>
+      <div class="link-grid">
+        <a class="card link-card" href="convenings/inaugural-convening/">
+          <small>Convening</small>
+          <h3>Inaugural Convening (2026-27)</h3>
+          <p>Agenda, leadership, council roster, and participant details.</p>
+        </a>
+        <a class="card link-card" href="documents/Innovation%20Leadership%20Council%20Charter.pdf">
+          <small>Document</small>
+          <h3>ILC Charter</h3>
+          <p>The Council's founding charter, membership criteria, and governance structure.</p>
+        </a>
+        <a class="card link-card"
+          href="https://www.dpi.nc.gov/about-dpi/state-superintendent-public-instruction/achieving-educational-excellence"
+          target="_blank" rel="noopener">
+          <small>Strategic Plan</small>
+          <h3>Achieving Educational Excellence: 2025-2030</h3>
+          <p>The statewide strategic plan the ILC's work responds to, including Pillar 6.</p>
+        </a>
+        <a class="card link-card"
+          href="https://www.dpi.nc.gov/districts-schools/office-research-promising-practices/innovation-leadership-council"
+          target="_blank" rel="noopener">
+          <small>Official Page</small>
+          <h3>NCDPI Innovation Leadership Council</h3>
+          <p>The Council's official landing page on the NCDPI website.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h2>Innovation Leadership Council</h2>
+        <p>This site hosts public convening pages, reports, and documents for the ILC. For the Council's official
+          program page, see NCDPI's website.</p>
+      </div>
+      <div class="footer-meta">Office of Research &amp; Promising Practices<br />North Carolina Department of Public
+        Instruction<br /><a href="mailto:Abby.Pearce@dpi.nc.gov">Abby.Pearce@dpi.nc.gov</a></div>
+    </div>
+  </footer>
 </body>
+
 </html>
