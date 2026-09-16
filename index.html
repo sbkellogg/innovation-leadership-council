@@ -16,6 +16,7 @@
       --dpi-orange: #FF9015;
       --dpi-green: #74C04B;
       --dpi-gray: #B7B9BB;
+      --aqua-text: #006174;
       --blue-10: #E6EDF6;
       --aqua-10: #EAF8FB;
       --green-10: #EFF8E9;
@@ -153,6 +154,13 @@
       color: var(--dpi-blue);
       border-radius: 999px;
       padding: .55rem .85rem
+    }
+
+    .nav a[aria-current="page"] {
+      color: var(--aqua-text);
+      background: var(--aqua-10);
+      border-radius: 999px;
+      padding: .4rem .85rem
     }
 
     .hero {
@@ -869,11 +877,12 @@
             Public Instruction</span></span>
       </a>
       <nav aria-label="Primary navigation" class="nav">
-        <a href="#about">About</a>
-        <a href="#cycle">Annual Cycle</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#roadmap">Roadmap</a>
-        <a class="nav-cta" href="#resources">Convenings &amp; Documents</a>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="convenings/inaugural-convening/">Inaugural Convening</a>
+        <a href="documents/Innovation%20Leadership%20Council%20Charter.pdf" target="_blank" rel="noopener">ILC
+          Charter</a>
+        <a href="https://www.dpi.nc.gov/about-dpi/state-superintendent-public-instruction/achieving-educational-excellence"
+          target="_blank" rel="noopener">Strategic Plan</a>
       </nav>
     </div>
   </header>

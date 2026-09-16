@@ -169,6 +169,13 @@
       padding: .55rem .85rem
     }
 
+    .nav a[aria-current="page"] {
+      color: var(--aqua-text);
+      background: var(--aqua-10);
+      border-radius: 999px;
+      padding: .4rem .85rem
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -1423,9 +1430,14 @@
             Department of
             Public Instruction</span></span>
       </a>
-      <nav aria-label="Primary navigation" class="nav"><a class="nav-cta" href="#prepare">Prepare</a><a
-          href="#about">About</a><a href="#leadership">Leadership</a><a href="#council">Council</a><a
-          href="#agenda">Agenda</a><a href="#travel">Travel</a></nav>
+      <nav aria-label="Primary navigation" class="nav">
+        <a href="../../index.html">Home</a>
+        <a href="index.html" aria-current="page">Inaugural Convening</a>
+        <a href="../../documents/Innovation%20Leadership%20Council%20Charter.pdf" target="_blank" rel="noopener">ILC
+          Charter</a>
+        <a href="https://www.dpi.nc.gov/about-dpi/state-superintendent-public-instruction/achieving-educational-excellence"
+          target="_blank" rel="noopener">Strategic Plan</a>
+      </nav>
     </div>
   </header>
   <section class="hero" id="top">
