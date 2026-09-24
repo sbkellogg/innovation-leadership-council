@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Working synthesis from Tuesday of the 2026-27 North Carolina Innovation Leadership Council inaugural convening.">
+  <title>Tuesday Synthesis | Innovation Leadership Council</title>
+  <style>
+    :root {
+      --dpi-blue:#003a70;
+      --dpi-purple:#922880;
+      --dpi-aqua:#29b5d9;
+      --aqua-medium:#077890;
+      --dpi-orange:#ff9015;
+      --dpi-green:#74c04b;
+      --blue-10:#e6edf6;
+      --aqua-10:#eaf8fb;
+      --green-10:#eff8e9;
+      --orange-10:#fff1e2;
+      --purple-10:#f5e9f3;
+      --ink:#172431;
+      --muted:#55636f;
+      --paper:#fff;
+      --surface:#f5f7f9;
+      --line:#dde3e8;
+      --radius:20px;
+      --max:1180px;
+      --shadow:0 10px 30px rgba(18,50,75,.065);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--surface);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.58}
+    a{color:var(--dpi-blue)}
+    img{max-width:100%}
+    .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--dpi-blue);padding:.7rem 1rem;z-index:999}
+    .skip:focus{left:1rem;top:1rem}
+    .header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .header-inner{max-width:var(--max);margin:auto;min-height:74px;padding:.8rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:.7rem;min-width:0;color:var(--dpi-blue);font-weight:800;text-decoration:none}
+    .brand-logo{display:block;height:54px;width:auto;max-width:190px;object-fit:contain}
+    .brand-copy{line-height:1.15;border-left:1px solid var(--line);padding-left:.72rem}
+    .brand-copy strong,.brand-copy span{display:block}
+    .brand-copy strong{font-size:.91rem}
+    .brand-copy span{margin-top:.14rem;color:var(--muted);font-size:.72rem;font-weight:700;white-space:nowrap}
+    .nav{display:flex;align-items:center;gap:1.05rem;flex-wrap:wrap}
+    .nav a{color:#465662;font-size:.88rem;font-weight:800;text-decoration:none}
+    .nav a:hover,.nav a:focus{color:var(--dpi-blue)}
+    .nav a[aria-current="page"]{color:#006174;background:var(--aqua-10);border-radius:999px;padding:.4rem .85rem}
+    .hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,var(--dpi-blue),#00518f)}
+    .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--dpi-aqua) 0 40%,var(--dpi-green) 40% 65%,var(--dpi-orange) 65% 82%,var(--dpi-purple) 82%)}
+    .hero-inner{position:relative;z-index:2;max-width:var(--max);margin:auto;padding:3.8rem 1.25rem 3.6rem;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:2.5rem;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:4px;border-radius:99px;background:var(--dpi-orange)}
+    h1{max-width:720px;margin:.7rem 0 .75rem;font-size:clamp(2.35rem,5vw,4.2rem);line-height:1;letter-spacing:-.045em}
+    .hero-sub{max-width:760px;margin:0;color:#f7fbff;font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.45}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
+    .pill{display:inline-flex;align-items:center;padding:.5rem .78rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.13);font-size:.85rem;font-weight:800}
+    .hero-card{padding:1.55rem;border-radius:var(--radius);background:#fff;color:var(--ink);box-shadow:0 20px 55px rgba(0,0,0,.2)}
+    .hero-card small{color:var(--dpi-blue);font-size:.72rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+    .hero-card h2{margin:.4rem 0 .65rem;color:var(--dpi-blue);font-size:1.35rem;line-height:1.2}
+    .hero-card p{margin:0;color:var(--muted);font-size:.94rem}
+    .hero-card .source-note{margin-top:1rem;padding-top:1rem;border-top:3px solid var(--dpi-orange);font-size:.84rem}
+    .quick-nav{position:sticky;top:74px;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+    .quick-nav-inner{max-width:var(--max);margin:auto;padding:.9rem 1.25rem;display:flex;gap:1.05rem;overflow-x:auto;scrollbar-width:thin}
+    .quick-nav a{color:var(--muted);font-size:.88rem;font-weight:800;text-decoration:none;white-space:nowrap}
+    .quick-nav a:hover,.quick-nav a:focus{color:var(--dpi-blue)}
+    main{max-width:var(--max);margin:auto;padding:4rem 1.25rem 5rem}
+    .section{margin-top:5.2rem;scroll-margin-top:142px}
+    .section:first-child{margin-top:0}
+    .section-label{margin:0 0 .35rem;color:var(--aqua-medium);font-size:.86rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .kicker{margin:0;color:var(--dpi-blue);font-size:clamp(1.85rem,3.4vw,2.75rem);font-weight:800;letter-spacing:-.028em;line-height:1.08}
+    .section-intro{max-width:850px;margin:1rem 0 0;color:var(--muted);font-size:1.05rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+    .stat{padding:1.55rem;text-align:center}
+    .stat strong{display:block;color:var(--dpi-blue);font-size:2.4rem;line-height:1}
+    .stat span{display:block;margin-top:.45rem;color:var(--muted);font-size:.86rem;font-weight:700}
+    .principle-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+    .finding{position:relative;padding:1.45rem 1.45rem 1.45rem 4rem}
+    .finding .num{position:absolute;left:1.3rem;top:1.35rem;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--aqua-10);color:var(--aqua-medium);font-weight:900}
+    .finding h3{margin:0 0 .4rem;color:var(--dpi-blue);font-size:1.04rem}
+    .finding p{margin:0;color:var(--muted);font-size:.92rem}
+    .tension-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+    .tension{padding:1.6rem;border-top:5px solid var(--dpi-orange)}
+    .tension:nth-child(2){border-top-color:var(--dpi-aqua)}
+    .tension:nth-child(3){border-top-color:var(--dpi-green)}
+    .tension:nth-child(4){border-top-color:var(--dpi-purple)}
+    .tension h3{margin:0 0 .55rem;color:var(--dpi-blue);font-size:1.1rem}
+    .tension p{margin:0;color:var(--muted);font-size:.93rem}
+    .tension .question{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--ink);font-weight:700}
+    .design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;counter-reset:design}
+    .design{position:relative;padding:1.55rem 1.55rem 1.55rem 4.4rem;counter-increment:design}
+    .design:before{content:counter(design);position:absolute;left:1.35rem;top:1.45rem;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--dpi-blue);color:#fff;font-weight:900}
+    .design h3{margin:0 0 .45rem;color:var(--dpi-blue);font-size:1.08rem}
+    .design p{margin:0;color:var(--muted);font-size:.92rem}
+    .design .apply{margin-top:.85rem;color:var(--ink);font-weight:700}
+    .shorthand{margin-top:1.2rem;padding:2rem;background:var(--dpi-blue);color:#fff;border:none}
+    .shorthand small{display:block;color:#bcecf7;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .shorthand blockquote{margin:.5rem 0 0;font-size:clamp(1.35rem,2.5vw,2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em}
+    .shorthand p{margin:.7rem 0 0;color:#d9e7f2}
+    .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+    .status{padding:1.55rem}
+    .status-tag{display:inline-flex;padding:.3rem .68rem;border-radius:999px;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+    .status.general .status-tag{background:var(--orange-10);color:#823d00}
+    .status.open .status-tag{background:var(--purple-10);color:#6e1360}
+    .status.minority .status-tag{background:var(--blue-10);color:var(--dpi-blue)}
+    .status h3{margin:.8rem 0 .45rem;color:var(--dpi-blue);font-size:1.05rem}
+    .status ul{margin:.4rem 0 0;padding-left:1.15rem;color:var(--muted);font-size:.92rem}
+    .status li+li{margin-top:.55rem}
+    .method{display:grid;grid-template-columns:.8fr 1.2fr;gap:1rem;margin-top:2rem}
+    .method>div{padding:1.6rem}
+    .method h3{margin:0 0 .7rem;color:var(--dpi-blue);font-size:1.08rem}
+    .method p{margin:0;color:var(--muted);font-size:.93rem}
+    .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+    .legend div{padding:.9rem;border-radius:14px;background:var(--surface)}
+    .legend strong{display:block;color:var(--ink);font-size:.86rem}
+    .legend span{display:block;margin-top:.22rem;color:var(--muted);font-size:.8rem}
+    .cta{margin-top:5.2rem;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:var(--aqua-10)}
+    .cta h2{margin:0 0 .35rem;color:var(--dpi-blue);font-size:1.4rem}
+    .cta p{margin:0;color:var(--muted)}
+    .btn{display:inline-block;padding:.7rem 1.05rem;border-radius:999px;background:var(--dpi-blue);color:#fff;font-size:.88rem;font-weight:800;text-decoration:none;white-space:nowrap}
+    footer{margin-top:5.2rem;background:var(--dpi-blue);color:#fff}
+    .footer-inner{max-width:var(--max);margin:auto;padding:2.6rem 1.25rem;display:grid;grid-template-columns:1.3fr .7fr;gap:2rem}
+    .footer-logo{display:block;height:64px;margin:0 0 .75rem}
+    .footer-inner p{max-width:720px;margin:0;color:#d9e7f2}
+    .footer-meta{text-align:right;color:#d9e7f2;font-size:.84rem;line-height:1.6}
+    .footer-meta a{color:#fff;text-decoration:none}
+    .footer-meta a:hover{text-decoration:underline}
+    @media(max-width:980px){
+      .nav{display:none}.brand-logo{height:46px;max-width:155px}.brand-copy span{display:none}
+      .hero-inner,.method{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr}.footer-meta{text-align:left}
+    }
+    @media(max-width:700px){
+      .principle-list,.tension-grid,.design-grid,.status-grid{grid-template-columns:1fr}
+      .legend{grid-template-columns:1fr}.quick-nav{top:72px}
+    }
+    @media(max-width:480px){.stats{grid-template-columns:1fr 1fr}.stat{padding:1.1rem}.brand-copy{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="../../../index.html" aria-label="Innovation Leadership Council home">
+        <img class="brand-logo" src="../../../assets/Innovation-Leadership-Council-Logos/Primary-Logo/LOGO-ILC-Color.png" alt="Innovation Leadership Council">
+        <span class="brand-copy"><strong>Office of Research &amp; Promising Practices</strong><span>North Carolina Department of Public Instruction</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../../../index.html">Home</a>
+        <a href="../">Inaugural Convening</a>
+        <a href="./" aria-current="page">Tuesday Synthesis</a>
+        <a href="../../../documents/Innovation%20Leadership%20Council%20Charter.pdf">ILC Charter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Inaugural Convening · Working Synthesis</div>
+        <h1>What the Council heard on Tuesday</h1>
+        <p class="hero-sub">A cross-table synthesis of where members converged, the reservations that remain, and the design principles carried into the next stage of the NC Innovation Exchange.</p>
+        <div class="hero-meta">
+          <span class="pill">September 22, 2026</span>
+          <span class="pill">Wilmington, NC</span>
+          <span class="pill">Preliminary—not a final decision record</span>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="How to interpret this page">
+        <small>Mock-up page</small>
+        <h2>A descriptive synthesis, not a vote</h2>
+        <p>The findings summarize table recorder responses from six groups and gallery-walk notes. Consensus labels describe the degree of substantive convergence; they do not represent a formal vote.</p>
+        <p class="source-note"><strong>Source basis:</strong> Tuesday recorder responses plus notes from the Focus, Solicit, Assess, Select, Elevate, and Scale stations.</p>
+      </aside>
+    </div>
+  </section>
+
+  <nav class="quick-nav" aria-label="Page sections">
+    <div class="quick-nav-inner">
+      <a href="#glance">At a Glance</a>
+      <a href="#convergence">Where We Converged</a>
+      <a href="#tensions">Design Tensions</a>
+      <a href="#principles">Design Principles</a>
+      <a href="#still-open">Still Open</a>
+      <a href="#method">How to Read This</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section" id="glance">
+      <p class="section-label">Tuesday at a Glance</p>
+      <h2 class="kicker">A strong foundation—and important questions</h2>
+      <p class="section-intro">Members aligned around several broad principles: design for varied North Carolina contexts, use evidence without rewarding application polish, preserve context, support thoughtful adaptation, broaden who gets surfaced, and connect people to more than a static repository.</p>
+      <div class="stats" aria-label="Synthesis overview">
+        <article class="card stat"><strong>6</strong><span>table groups synthesized</span></article>
+        <article class="card stat"><strong>13</strong><span>cross-table findings</span></article>
+        <article class="card stat"><strong>8</strong><span>draft design principles</span></article>
+        <article class="card stat"><strong>4</strong><span>tensions kept visible</span></article>
+      </div>
+    </section>
+
+    <section class="section" id="convergence">
+      <p class="section-label">Strong Convergence</p>
+      <h2 class="kicker">Where the Council found common ground</h2>
+      <p class="section-intro">These themes appeared across most or nearly all table groups, with little substantive alternative direction.</p>
+      <div class="principle-list">
+        <article class="card finding"><span class="num">1</span><h3>Design for equitable access</h3><p>The Exchange should work across rural, urban, suburban, charter, lab, small, and larger systems—not only well-resourced or well-connected PSUs.</p></article>
+        <article class="card finding"><span class="num">2</span><h3>Preserve context and conditions</h3><p>Share why a practice works, the resources and conditions it requires, what is essential, and what can be adapted.</p></article>
+        <article class="card finding"><span class="num">3</span><h3>Use clear and credible evidence</h3><p>Apply transparent criteria consistently and look beyond polished applications toward meaningful evidence and impact.</p></article>
+        <article class="card finding"><span class="num">4</span><h3>Surface practices intentionally</h3><p>Broad outreach is necessary because passive solicitation can reproduce existing visibility and access advantages.</p></article>
+        <article class="card finding"><span class="num">5</span><h3>Build an active exchange</h3><p>The value is in connecting people to practices, practitioners, networks, supports, funders, and partners—not merely creating another clearinghouse.</p></article>
+        <article class="card finding"><span class="num">6</span><h3>Separate recognition from scale</h3><p>A promising practice may deserve visibility before it is ready for broader adoption. Scale should depend on readiness, evidence, fit, resources, and buy-in.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="tensions">
+      <p class="section-label">Cross-Cutting Tensions</p>
+      <h2 class="kicker">Tradeoffs the design must hold</h2>
+      <p class="section-intro">These are not problems to eliminate once. They are tensions to revisit throughout the Exchange’s design and operation.</p>
+      <div class="tension-grid">
+        <article class="card tension"><h3>Focus without exclusion</h3><p>Create enough focus to make solicitation understandable and comparison meaningful without screening out valuable local work.</p><p class="question">How focused should the first cycle be while still leaving room for worthwhile practices?</p></article>
+        <article class="card tension"><h3>Credibility without excessive burden</h3><p>Gather enough evidence for a trustworthy process without favoring large systems, experienced grant writers, or teams with greater evaluation capacity.</p><p class="question">What is the minimum information needed at each stage for a credible decision?</p></article>
+        <article class="card tension"><h3>Adaptation without losing what works</h3><p>Expect local adaptation while making the practice’s essential components and supporting conditions visible.</p><p class="question">What must remain intact, and what can change to fit another context?</p></article>
+        <article class="card tension"><h3>Recognition without premature scale</h3><p>Celebrate promising work without implying that it is automatically ready for widespread replication or state-supported adoption.</p><p class="question">What additional readiness, demand, evidence, and support should broader adoption require?</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="principles">
+      <p class="section-label">Draft Cross-Strand Design Principles</p>
+      <h2 class="kicker">Eight decision rules for the work ahead</h2>
+      <p class="section-intro">The synthesis proposed these as shared lenses across the design strands—not as eight additional criteria to score separately.</p>
+      <div class="design-grid">
+        <article class="card design"><h3>Start with a clear problem and focus</h3><p>Organize the Exchange around meaningful problems or priorities that create coherence without excluding worthwhile ideas.</p><p class="apply">Ask: What problem are we solving, for whom, and is the focus clear without becoming unnecessarily restrictive?</p></article>
+        <article class="card design"><h3>Prioritize meaningful impact</h3><p>Elevate work for its potential to improve outcomes for students, educators, families, or schools—not because it is novel for its own sake.</p><p class="apply">Ask: What should be different because this practice exists, and what evidence would show that difference?</p></article>
+        <article class="card design"><h3>Design for equity, access, and representation</h3><p>Ensure educators and PSUs across regions, school types, sizes, communities, and resource levels can participate and benefit.</p><p class="apply">Ask: Who could be advantaged, overlooked, or unable to participate, adopt, or benefit?</p></article>
+        <article class="card design"><h3>Make participation worthwhile and proportionate</h3><p>Ask only for what is necessary at each stage and make the value to educators and PSUs clear.</p><p class="apply">Ask: Is the burden proportionate to the decision, and what does the contributor receive in return?</p></article>
+        <article class="card design"><h3>Use evidence clearly, consistently, and in context</h3><p>Use transparent criteria and multiple forms of evidence while accounting for maturity, context, and local capacity.</p><p class="apply">Ask: What do we know, how confident are we, and are we applying criteria consistently and fairly?</p></article>
+        <article class="card design"><h3>Preserve the practice, the people, and the context</h3><p>Document what happened, why it worked, who did the work, what supported it, and what resources it required.</p><p class="apply">Ask: Would another educator understand both the practice and the conditions that made it successful?</p></article>
+        <article class="card design"><h3>Adapt with fidelity</h3><p>Support local adaptation while identifying the essential elements that should be protected.</p><p class="apply">Ask: What is core and should remain intact, and what can change to fit another context?</p></article>
+        <article class="card design"><h3>Scale responsibly and sustainably</h3><p>Move toward broader adoption only when evidence, readiness, resources, demand, implementation support, and stakeholder buy-in justify it.</p><p class="apply">Ask: Is this ready to move further, what support is required, and what could happen if we move too quickly?</p></article>
+      </div>
+      <aside class="card shorthand">
+        <small>Useful shorthand</small>
+        <blockquote>“Tight on the core, loose on the rest.”</blockquote>
+        <p>Preserve the elements that make a practice effective while allowing appropriate adaptation to local context.</p>
+      </aside>
+    </section>
+
+    <section class="section" id="still-open">
+      <p class="section-label">Reservations and Unresolved Questions</p>
+      <h2 class="kicker">What remains open</h2>
+      <p class="section-intro">The synthesis intentionally preserves issues that did not reach the same level of convergence. These items require continued design work rather than being smoothed over.</p>
+      <div class="status-grid">
+        <article class="card status general"><span class="status-tag">General convergence</span><h3>Direction with conditions</h3><ul><li>Create focus and coherence without becoming too narrow.</li><li>Keep participation practical, proportionate, and worthwhile.</li><li>Build a durable effort that connects to existing work.</li><li>Keep student, educator, family, and practitioner voices visible.</li></ul></article>
+        <article class="card status open"><span class="status-tag">Not enough input yet</span><h3>Questions needing resolution</h3><ul><li>Should evidence expectations vary by maturity or stage?</li><li>Should the Exchange use staged recognition or one common standard?</li><li>What shared working definition of “innovation” should guide eligibility?</li></ul></article>
+        <article class="card status minority"><span class="status-tag">Minority perspective</span><h3>Practices, not packages</h3><ul><li>Prioritize locally grounded practices rather than commercially packaged solutions.</li><li>Preserve this question because it could materially affect eligibility, even though Council-wide agreement was not established.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <p class="section-label">About This Synthesis</p>
+      <h2 class="kicker">How to read the findings</h2>
+      <div class="method">
+        <div class="card">
+          <h3>Source and scope</h3>
+          <p>This working synthesis draws on Tuesday recorder responses from Tables 1–6 and gallery-walk notes from the Focus, Solicit, Assess, Select, Elevate, and Scale stations. It captures a point in the Council’s design process and should not be read as a final recommendation or formal decision record.</p>
+        </div>
+        <div class="card">
+          <h3>Consensus language</h3>
+          <div class="legend">
+            <div><strong>Strong convergence</strong><span>Most or nearly all groups align, with little substantive alternative direction.</span></div>
+            <div><strong>General convergence with reservations</strong><span>A clear direction appears, but recurring concerns or conditions remain.</span></div>
+            <div><strong>Not enough input yet</strong><span>Notes are too limited or varied to establish a cross-table direction.</span></div>
+            <div><strong>Important minority perspective</strong><span>A consequential view remains visible even though it was not broadly expressed.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card cta">
+      <div><h2>See the convening context</h2><p>Review the Council roster, design strands, agenda, and original participant information.</p></div>
+      <a class="btn" href="../">View the inaugural convening page</a>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <img class="footer-logo" src="../../../assets/Innovation-Leadership-Council-Logos/Primary-Logo/LOGO-ILC-White.png" alt="Innovation Leadership Council">
+        <p>Working mock-up based on the Council’s Tuesday cross-table synthesis. Content remains subject to review and refinement.</p>
+      </div>
+      <div class="footer-meta">
+        <a href="https://www.dpi.nc.gov/districts-schools/office-research-promising-practices">Office of Research &amp; Promising Practices</a><br>
+        <a href="https://www.dpi.nc.gov/">North Carolina Department of Public Instruction</a><br>
+        Mock-up prepared September 24, 2026
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
